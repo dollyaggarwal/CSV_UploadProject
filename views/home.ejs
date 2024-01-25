@@ -6,6 +6,54 @@
     <title>CSV Upload</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
+<style>
+  body {
+      font-family: 'Arial', sans-serif;
+      background-color: #c7cf93c0;
+      color: #060607;
+  }
+
+  h1 {
+      color: #0040ff; /* Bootstrap primary color */
+      text-align: center;
+  }
+
+  table {
+      width: 100%;
+      margin-bottom: 1rem;
+      color: #040505;
+  }
+
+  th, td {
+      padding: 0.75rem;
+      text-align: left;
+      border-bottom: 1px solid #dee2e6dc;
+  }
+
+  a {
+      color: #002fffe2;
+      text-decoration: none;
+  }
+
+  .upload-btn{
+   margin-left: 32%;
+   padding: 12px 80px;
+   background-color: #0040ff;
+  font-weight: 600;
+
+
+  }
+
+  a:hover {
+      text-decoration: underline;
+  }
+
+  .container {
+      margin-top: 50px;
+  }
+
+  /* Add more styles as needed */
+</style>
 
 <body>
 
@@ -46,9 +94,9 @@
                 <form action="/upload" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="csvFile">Select a CSV file to upload:</label>
-                        <input type="file" class="form-control-file" id="csvFile" name="csv" accept=".csv">
+                        <input type="file" class="form-control-file choose-btn" id="csvFile" name="csv" accept=".csv">
                     </div>
-                    <button type="submit" class="btn btn-primary">Upload</button>
+                    <button type="submit" class="btn btn-primary upload-btn">Upload</button>
                 </form>
             </div>
         </div>
