@@ -1,6 +1,6 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const connectDB = require('./config/database');
 const fileRoutes = require('./routes/fileRoutes');
 const uploadRoutes = require('./routes/uploadRoutes');
 
@@ -8,7 +8,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Connect to MongoDB using Mongoose
-mongoose.connect('mongodb://localhost/csvfiles', { useNewUrlParser: true, useUnifiedTopology: true });
+connectDB();
 
 app.use(bodyParser.json());
 
