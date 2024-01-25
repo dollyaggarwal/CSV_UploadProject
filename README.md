@@ -22,7 +22,7 @@
 
 # Technologies Used 💻
 
-## For Frontend
+## Frontend
 
 - HTML
 - CSS
