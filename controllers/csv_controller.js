@@ -94,7 +94,7 @@ module.exports.view = async function (req, res) {
         }
       });
     });
-    console.log(fileData);
+
 
     res.render('csv_view', {
       fileData,
