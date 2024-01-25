@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileListDiv = document.getElementById('fileList');
     fileListDiv.innerHTML = '';
   
-    const response = await fetch('/files');
+    const response = await fetch('/uploads');
     const files = await response.json();
   
     files.forEach((file) => {
@@ -57,10 +57,14 @@ document.addEventListener('DOMContentLoaded', () => {
     formData.append('csvFile', fileInput.files[0]);
   
     try {
-      const response = await fetch('/upload', {
+      const response = await fetch('/uploads', {
         method: 'POST',
         body: formData,
       });
+      console.log(response)
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
   
       const result = await response.json();
       alert(result.message);
@@ -69,6 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
       displayFileList();
     } catch (error) {
       console.error('Error uploading file:', error);
+      alert('Error uploading file. Please try again.');
     }
   }
   
